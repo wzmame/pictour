@@ -1,4 +1,4 @@
-package wszolek.lauren.pictour;
+package wzmame.pictour;
 
 import org.junit.Test;
 

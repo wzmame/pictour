@@ -1,4 +1,4 @@
-package wszolek.lauren.pictour;
+package wzmame.pictour;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
