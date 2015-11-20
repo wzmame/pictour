@@ -1,7 +1,7 @@
 # PicTour
-<div style="text-align:center">
-<img src="https://cloud.githubusercontent.com/assets/161639/11292052/39abf3d6-8efd-11e5-8f4e-747fe6c153f0.png">
-</div>
+<p align:center>
+<img src="https://cloud.githubusercontent.com/assets/161639/11292132/904bce18-8efe-11e5-8bf6-6065eda54938.png">
+</p>
 **PicTour** is a way to explore an area through the eyes of another person. An individual can craft a walking tour for any theme they wish, providing locations and a map, explaining why the locations are special and giving insight into local color. Have you ever noticed a particularly special set of decorative manhole covers in Ballard? Plan an optimal route to visit them all, take photos of each location, and then share the route through PicTour. Others can download the app and then follow your route step by step, walking in your footsteps and seeing the world through your eyes.
 
 ## User Stories
