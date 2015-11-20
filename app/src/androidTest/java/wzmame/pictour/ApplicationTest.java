@@ -1,4 +1,4 @@
-package wszolek.lauren.pictour;
+package wzmame.pictour;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
