@@ -1,12 +1,18 @@
-package wzmame.pictour;
+package wzmame.pictour.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.parse.Parse;
 import com.parse.ParseObject;
 
-public class MainActivity extends AppCompatActivity {
+import wzmame.pictour.ParseConfig;
+import wzmame.pictour.R;
+
+public class Home extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,5 +25,16 @@ public class MainActivity extends AppCompatActivity {
         ParseObject testObject = new ParseObject("TestObject");
         testObject.put("foo", "bar");
         testObject.saveInBackground();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.home, menu);
+        return true;
+    }
+
+    public void onTestAreaAction(MenuItem item) {
+        Intent testAreaIntent = new Intent(this, TestArea.class);
+        startActivity(testAreaIntent);
     }
 }
