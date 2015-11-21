@@ -1,4 +1,4 @@
-package wzmame.pictour;
+package wzmame.pictour.config;
 
 // Configuration settings for parse.com
 public final class ParseConfig {

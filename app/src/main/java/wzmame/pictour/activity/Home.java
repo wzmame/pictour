@@ -6,10 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.parse.Parse;
-import com.parse.ParseObject;
-
-import wzmame.pictour.ParseConfig;
 import wzmame.pictour.R;
 
 public class Home extends AppCompatActivity {

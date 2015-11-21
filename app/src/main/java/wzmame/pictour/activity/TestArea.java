@@ -8,8 +8,8 @@ import android.widget.Toast;
 import com.parse.Parse;
 import com.parse.ParseObject;
 
-import wzmame.pictour.ParseConfig;
 import wzmame.pictour.R;
+import wzmame.pictour.config.ParseConfig;
 
 public class TestArea extends AppCompatActivity {
 
