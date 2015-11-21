@@ -1,5 +1,6 @@
 package wzmame.pictour.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -25,5 +26,10 @@ public class TestArea extends AppCompatActivity {
         ParseObject testObject = new ParseObject("TestObject");
         testObject.put("foo", "bar");
         testObject.saveInBackground();
+    }
+
+    public void onNewLocationClick(View view) {
+        Intent newLocationIntent = new Intent(this, NewLocation.class);
+        startActivity(newLocationIntent);
     }
 }
