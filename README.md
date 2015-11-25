@@ -1,7 +1,9 @@
 # PicTour
+
 <p align:center>
 <img src="https://cloud.githubusercontent.com/assets/161639/11292132/904bce18-8efe-11e5-8bf6-6065eda54938.png">
 </p>
+
 **PicTour** is a way to explore an area through the eyes of another person. An individual can craft a walking tour for any theme they wish, providing locations and a map, explaining why the locations are special and giving insight into local color. Have you ever noticed a particularly special set of decorative manhole covers in Ballard? Plan an optimal route to visit them all, take photos of each location, and then share the route through PicTour. Others can download the app and then follow your route step by step, walking in your footsteps and seeing the world through your eyes.
 
 ## User Stories
@@ -9,6 +11,7 @@
 Users take on two roles within the app: Tour guides and Explorers
 
 ### Tour Guides
+
 * Create a new walking Tour and give it a colorful name and description
 * In order to create your Tour, you must first go on the Tour yourself, visiting each location
 * Add a new Stop on the Tour, providing a photo that captures the experience, title, and description.
@@ -22,6 +25,7 @@ Users take on two roles within the app: Tour guides and Explorers
   * (super duper optional) Offer the ability for the audio to start playing automatically as the Explorer nears the location of a Stop
 
 ### Explorers
+
 * Select a tour from the list and click begin to go on a new adventure
 * The tour opens up in a map, giving a path to take between the stops in the order determined by the tour guide
 * Walking directions to each Tour Stop are computed by [Google Maps' walking directions](https://developers.google.com/maps/documentation/directions/?hl=en)
@@ -44,5 +48,10 @@ Users take on two roles within the app: Tour guides and Explorers
 * Difficulty ratings on tours
 * Play a sound or send a push notification when a user has reached a Stop on the Tour
 
-## Mockups and basic interactions:
-https://www.fluidui.com:443/editor/live/preview/p_Llo6CBk71dl34aegf4O0yK1vT12i5rzy
+## Mockups and basic interactions
+
+[Interactive mockup](https://www.fluidui.com:443/editor/live/preview/p_Llo6CBk71dl34aegf4O0yK1vT12i5rzy)
+
+## Relational database schema
+
+[Relational db schema](schema.md)
