@@ -1,3 +1,6 @@
+# personalized config files
+parse-configuration.json
+
 # built application files
 *.apk
 *.ap_

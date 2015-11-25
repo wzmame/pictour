@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">PicTour</string>
     <string name="menu_testarea">Test area</string>
+    <string name="location_done_button_label">Done</string>
+    <string name="location_cancel_button_label">Cancel</string>
+    <string name="location_description_hint">Description</string>
+    <string name="location_name_hint">Name</string>
+    <string name="location_take_picure_button_label">Take a Pic</string>
+    <string name="take_picture_button_description">Take picture</string>
 </resources>
