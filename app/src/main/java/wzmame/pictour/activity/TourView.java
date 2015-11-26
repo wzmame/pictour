@@ -51,12 +51,11 @@ public class TourView extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public class TourViewPagerAdapter extends FragmentPagerAdapter {
+    private class TourViewPagerAdapter extends FragmentPagerAdapter {
 
-        final int PAGE_COUNT = 2;
-        String[] titles;
-        TourListViewFragment lvFragment;
-        TourMapViewFragment mvFragment;
+        private String[] titles;
+        private TourListViewFragment lvFragment;
+        private TourMapViewFragment mvFragment;
 
 
         public TourViewPagerAdapter(FragmentManager fm) {
@@ -70,9 +69,9 @@ public class TourView extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            if(position == 0) {
+            if (position == 0) {
                 return lvFragment;
-            }else {
+            } else {
                 return mvFragment;
             }
         }
@@ -84,7 +83,7 @@ public class TourView extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return PAGE_COUNT;
+            return titles.length;
         }
     }
 }

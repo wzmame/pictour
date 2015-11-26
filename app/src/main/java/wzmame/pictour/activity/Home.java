@@ -37,7 +37,6 @@ public class Home extends AppCompatActivity {
         lvHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getBaseContext(), "Tour Item Clicked", Toast.LENGTH_LONG).show();
                 Intent i = new Intent(Home.this, TourView.class);
                 startActivity(i);
             }
