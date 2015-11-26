@@ -13,8 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import wzmame.pictour.R;
-import wzmame.pictour.activity.DetailedLocation;
-import wzmame.pictour.activity.NewLocation;
+import wzmame.pictour.activity.LocationView;
 
 /**
  * Created by xmeng on 11/25/15.
@@ -31,7 +30,7 @@ public class TourListViewFragment extends Fragment {
         lvLocation.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent i = new Intent(getContext(), DetailedLocation.class);
+                Intent i = new Intent(getContext(), LocationView.class);
                 startActivity(i);
             }
         });

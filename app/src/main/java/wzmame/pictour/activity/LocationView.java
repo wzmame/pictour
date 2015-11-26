@@ -7,12 +7,12 @@ import android.view.MenuItem;
 
 import wzmame.pictour.R;
 
-public class DetailedLocation extends AppCompatActivity {
+public class LocationView extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detailed_location);
+        setContentView(R.layout.activity_location_view);
     }
 
     @Override

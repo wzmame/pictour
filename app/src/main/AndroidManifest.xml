@@ -25,7 +25,7 @@
         <activity android:name=".activity.NewLocation" />
         <activity android:name=".activity.NewTour" />
         <activity android:name=".activity.TourView" />
-        <activity android:name=".activity.DetailedLocation" />
+        <activity android:name=".activity.LocationView" />
     </application>
 
 </manifest>

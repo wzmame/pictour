@@ -38,6 +38,6 @@ public class NewTour extends AppCompatActivity {
     }
 
     public void onAddLocationAction(View view) {
-        Toast.makeText(this, "Add Location button!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Add LocationView button!", Toast.LENGTH_SHORT).show();
     }
 }
