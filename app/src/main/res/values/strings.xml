@@ -7,6 +7,13 @@
     <string name="location_name_hint">Name</string>
     <string name="location_take_picure_button_label">Take a Pic</string>
     <string name="take_picture_button_description">Take picture</string>
+    <string name="tour_name_label">Tour Name</string>
+    <string name="description_label">Description</string>
+    <string name="locations_label">Locations</string>
+    <string name="add_location_button_label">Add Location</string>
+    <string name="done_button_label">Done</string>
+    <string name="description_hint">Description</string>
+    <string name="tour_name_hint">Tour Name</string>
     <string name="new_tour_button_text">New Tour</string>
     <string name="title_activity_tour_view">TourView</string>
 
