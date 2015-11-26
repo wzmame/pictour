@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.parse.Parse;
 import com.parse.ParseObject;
@@ -21,6 +24,14 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initializeParse();
+        Button newTourBtn = (Button) findViewById(R.id.btnNewTour);
+        newTourBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //click listener function hook up create tour activity here.
+                Toast.makeText(Home.this, "New Tour Clicked", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Override
@@ -40,4 +51,5 @@ public class Home extends AppCompatActivity {
 
         ParseObject.registerSubclass(Location.class);
     }
+
 }

@@ -7,4 +7,5 @@
     <string name="location_name_hint">Name</string>
     <string name="location_take_picure_button_label">Take a Pic</string>
     <string name="take_picture_button_description">Take picture</string>
+    <string name="new_tour_button_text">New Tour</string>
 </resources>
