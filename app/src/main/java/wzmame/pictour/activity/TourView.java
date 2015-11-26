@@ -53,7 +53,7 @@ public class TourView extends AppCompatActivity {
 
     private class TourViewPagerAdapter extends FragmentPagerAdapter {
 
-        private String[] titles;
+        private String[] titles = {"List", "Map"};
         private TourListViewFragment lvFragment;
         private TourMapViewFragment mvFragment;
 
@@ -62,9 +62,6 @@ public class TourView extends AppCompatActivity {
             super(fm);
             lvFragment= new TourListViewFragment();
             mvFragment = new TourMapViewFragment();
-            titles = new String[2];
-            titles[0] = "List";
-            titles[1] = "Map";
         }
 
         @Override
