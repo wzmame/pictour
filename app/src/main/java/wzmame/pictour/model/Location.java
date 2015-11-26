@@ -5,7 +5,7 @@ import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
-@ParseClassName("LocationView")
+@ParseClassName("Location")
 public class Location extends ParseObject {
     public Location() { }
 
