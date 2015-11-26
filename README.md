@@ -55,3 +55,11 @@ Users take on two roles within the app: Tour guides and Explorers
 ## Relational database schema
 
 [Relational db schema](schema.md)
+
+## Walkthrough
+
+Walkthrough of the functionality of our app so far.
+
+You'll need to use your imagination for the map portion, as well as the list views that will eventually be populated with live data from the backend. For this demo we used some hardcoded data. The images and tour location information *are* currently being stored to parse.com, we just aren't pulling them back down. Our next steps are to retrieve those images/entries and display them. Lastly the style of the app will get an overhaul.
+
+![Video Walkthrough](walkthrough.gif)
