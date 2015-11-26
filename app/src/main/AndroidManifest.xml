@@ -3,6 +3,7 @@
     package="wzmame.pictour" >
 
     <uses-feature android:name="android.hardware.camera" />
+
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -23,6 +24,10 @@
         <activity android:name=".activity.TestArea" >
         </activity>
         <activity android:name=".activity.NewLocation" >
+        </activity>
+        <activity
+            android:name=".activity.TourView"
+            android:label="@string/title_activity_tour_view" >
         </activity>
     </application>
 
