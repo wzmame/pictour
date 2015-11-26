@@ -28,8 +28,8 @@ public class Home extends AppCompatActivity {
         newTourBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //click listener function hook up create tour activity here.
-                Toast.makeText(Home.this, "New Tour Clicked", Toast.LENGTH_LONG).show();
+                Intent i = new Intent(getBaseContext(), NewTour.class);
+                startActivity(i);
             }
         });
     }
