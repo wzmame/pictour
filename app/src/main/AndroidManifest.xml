@@ -24,6 +24,8 @@
         <activity android:name=".activity.TestArea"/>
         <activity android:name=".activity.NewLocation"/>
         <activity android:name=".activity.NewTour"/>
+        <activity android:name=".activity.TourView"/>
+
     </application>
 
 </manifest>
