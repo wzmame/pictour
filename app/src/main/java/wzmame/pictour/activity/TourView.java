@@ -22,7 +22,7 @@ public class TourView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tour_view);
-        vPager = (ViewPager)findViewById(R.id.viewpager);
+        vPager = (ViewPager) findViewById(R.id.viewpager);
         adapter = new TourViewPagerAdapter(getSupportFragmentManager());
         vPager.setAdapter(adapter);
         PagerSlidingTabStrip tabStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
@@ -60,7 +60,7 @@ public class TourView extends AppCompatActivity {
 
         public TourViewPagerAdapter(FragmentManager fm) {
             super(fm);
-            lvFragment= new TourListViewFragment();
+            lvFragment = new TourListViewFragment();
             mvFragment = new TourMapViewFragment();
         }
 

@@ -19,7 +19,7 @@ public class TourListViewFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_tour_list_view_fragment,container, false);
+        View v = inflater.inflate(R.layout.fragment_tour_list_view_fragment, container, false);
         String[] listItems = {"Location1", "Location2", "Location3"};
         ListView lvLocation = (ListView) v.findViewById(R.id.lvLocations);
         ArrayAdapter<String> sampleAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, listItems);
