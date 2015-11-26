@@ -16,7 +16,7 @@ public class TourMapViewFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_tour_map_view_fragment,container, false);
+        View v = inflater.inflate(R.layout.fragment_tour_map_view_fragment, container, false);
         return v;
     }
 
