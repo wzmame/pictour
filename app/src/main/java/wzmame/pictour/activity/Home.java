@@ -32,7 +32,7 @@ public class Home extends AppCompatActivity {
         Button newTourBtn = (Button) findViewById(R.id.btnNewTour);
         ListView lvHome = (ListView) findViewById(R.id.lvHome);
         String[] listItems = {"Tour List"};
-        ArrayAdapter<String> sampleAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1 ,listItems);
+        ArrayAdapter<String> sampleAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listItems);
         lvHome.setAdapter(sampleAdapter);
         lvHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
