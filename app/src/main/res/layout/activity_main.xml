@@ -24,7 +24,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Tour"
+        android:text="@string/new_tour_button_text"
         android:id="@+id/btnNewTour"
         android:layout_alignBottom="@+id/listView"
         android:layout_alignRight="@+id/listView"
