@@ -1,16 +1,19 @@
 package wzmame.pictour.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import wzmame.pictour.R;
+import wzmame.pictour.activity.LocationView;
 
 /**
  * Created by xmeng on 11/25/15.
@@ -24,6 +27,13 @@ public class TourListViewFragment extends Fragment {
         ListView lvLocation = (ListView) v.findViewById(R.id.lvLocations);
         ArrayAdapter<String> sampleAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, listItems);
         lvLocation.setAdapter(sampleAdapter);
+        lvLocation.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent i = new Intent(getContext(), LocationView.class);
+                startActivity(i);
+            }
+        });
         return v;
     }
 
