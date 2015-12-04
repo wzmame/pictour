@@ -19,18 +19,23 @@ import wzmame.pictour.activity.LocationView;
  * Created by xmeng on 11/25/15.
  */
 public class TourListViewFragment extends Fragment {
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_tour_list_view_fragment, container, false);
         String[] listItems = {"Location1", "Location2", "Location3"};
+        ArrayAdapter<String> sampleAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, listItems);
+
+        View v = inflater.inflate(R.layout.fragment_tour_list_view_fragment, container, false);
         ListView lvLocation = (ListView) v.findViewById(R.id.lvLocations);
-        ArrayAdapter<String> sampleAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, listItems);
         lvLocation.setAdapter(sampleAdapter);
         lvLocation.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String locationId = "yqAsJzXHaD"; // TODO: Remove hardcoded value
+
                 Intent i = new Intent(getContext(), LocationView.class);
+                i.putExtra("locationId", locationId);
                 startActivity(i);
             }
         });
