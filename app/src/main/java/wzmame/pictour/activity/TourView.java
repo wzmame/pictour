@@ -16,13 +16,16 @@ import wzmame.pictour.fragment.TourMapViewFragment;
 public class TourView extends AppCompatActivity {
     ViewPager vPager;
     FragmentPagerAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tour_view);
+
         vPager = (ViewPager) findViewById(R.id.viewpager);
         adapter = new TourViewPagerAdapter(getSupportFragmentManager());
         vPager.setAdapter(adapter);
+
         PagerSlidingTabStrip tabStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
         tabStrip.setViewPager(vPager);
     }
@@ -33,9 +36,9 @@ public class TourView extends AppCompatActivity {
         private TourListViewFragment lvFragment;
         private TourMapViewFragment mvFragment;
 
-
         public TourViewPagerAdapter(FragmentManager fm) {
             super(fm);
+
             lvFragment = new TourListViewFragment();
             mvFragment = new TourMapViewFragment();
         }

@@ -1,36 +1,45 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context="wzmame.pictour.activity.LocationView">
+
+    <com.parse.ParseImageView
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:id="@+id/ivPicture"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Sample Location"
-        android:id="@+id/textView3"
-        android:layout_alignParentTop="true"
+        android:text="Location Name"
+        android:id="@+id/tvName"
+        android:layout_below="@+id/ivPicture"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:paddingLeft="3dp"
+        android:paddingStart="3dp"
+        android:paddingRight="3dp"
+        android:paddingEnd="3dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="This location has an amazing view to downtown seattle and it is very good for family trips. This is the best view I have ever got in seattle"
-        android:id="@+id/textView4"
-        android:layout_below="@+id/textView3"
+        android:text="Location Description Location Description Location Description Location Description Location Description Location Description Location Description Location Description Location Description Location Description Location Description Location Description Location Description Location Description Location Description Location Description Location Description Location Description Location Description Location Description Location Description Location Description "
+        android:id="@+id/tvDescription"
+        android:layout_below="@+id/tvName"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <ImageView
-        android:layout_width="400dp"
-        android:layout_height="400dp"
-        android:id="@+id/imageView"
-        android:layout_below="@+id/textView4"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:scrollbars="horizontal"
+        android:paddingLeft="3dp"
+        android:paddingStart="3dp"
+        android:paddingRight="3dp"
+        android:paddingEnd="3dp" />
 </RelativeLayout>
