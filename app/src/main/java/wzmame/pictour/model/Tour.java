@@ -1,21 +1,11 @@
 package wzmame.pictour.model;
 
 import com.parse.ParseClassName;
-import com.parse.ParseFile;
 import com.parse.ParseObject;
 
-@ParseClassName("Location")
-public class Location extends ParseObject {
-
-    public Location() { }
-
-    public String getTourId() {
-        return getString("tourId");
-    }
-
-    public void setTourId(String tourId) {
-        put("tourId", tourId);
-    }
+@ParseClassName("Tour")
+public class Tour extends ParseObject {
+    public Tour() { }
 
     public String getName() {
         String name = getString("name");
@@ -41,13 +31,5 @@ public class Location extends ParseObject {
 
     public void setDescription(String description) {
         put("description", description);
-    }
-
-    public ParseFile getPicture() {
-        return getParseFile("picture");
-    }
-
-    public void setPicture(ParseFile picture) {
-        put("picture", picture);
     }
 }
