@@ -16,10 +16,13 @@ public class NewLocation extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        location = new Location();
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_location);
+
+        String tourId = getIntent().getStringExtra("tourId");
+
+        location = new Location();
+        location.setTourId(tourId);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment = fragmentManager.findFragmentById(R.id.fragmentContainer);

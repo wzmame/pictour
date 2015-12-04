@@ -7,21 +7,23 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.parse.Parse;
 import com.parse.ParseObject;
-
-import java.util.ArrayList;
+import com.parse.ParseQueryAdapter;
 
 import wzmame.pictour.R;
 import wzmame.pictour.config.ParseConfig;
 import wzmame.pictour.model.Location;
+import wzmame.pictour.model.Tour;
 
 public class Home extends AppCompatActivity {
+
+    public final static int REQUEST_NEW_TOUR = 101;
+
+    private ParseQueryAdapter<Tour> aTours;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,26 +31,38 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initializeParse();
-        Button newTourBtn = (Button) findViewById(R.id.btnNewTour);
-        ListView lvHome = (ListView) findViewById(R.id.lvHome);
-        String[] listItems = {"Seattle", "Portland", "Chicago", "New York"};
-        ArrayAdapter<String> sampleAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listItems);
-        lvHome.setAdapter(sampleAdapter);
-        lvHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        aTours = new ParseQueryAdapter<Tour>(this, Tour.class);
+        aTours.setTextKey("name");
+
+        ListView lvTours = (ListView) findViewById(R.id.lvTours);
+        lvTours.setAdapter(aTours);
+        lvTours.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent i = new Intent(Home.this, TourView.class);
-                startActivity(i);
+                Intent viewTourIntent = new Intent(Home.this, TourView.class);
+                startActivity(viewTourIntent);
             }
         });
+    }
 
-        newTourBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getBaseContext(), NewTour.class);
-                startActivity(i);
-            }
-        });
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case REQUEST_NEW_TOUR:
+                if (resultCode != RESULT_OK) {
+                    Toast.makeText(this, "Couldn't make new tour", Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                aTours.loadObjects();
+
+                break;
+
+            default:
+                super.onActivityResult(requestCode, resultCode, data);
+        }
     }
 
     @Override
@@ -66,7 +80,12 @@ public class Home extends AppCompatActivity {
         Parse.enableLocalDatastore(this);
         Parse.initialize(this, ParseConfig.APPLICATION_ID, ParseConfig.CLIENT_ID);
 
+        ParseObject.registerSubclass(Tour.class);
         ParseObject.registerSubclass(Location.class);
     }
 
+    public void onNewTourAction(View view) {
+        Intent newTourIntent = new Intent(this, NewTour.class);
+        startActivityForResult(newTourIntent, REQUEST_NEW_TOUR);
+    }
 }
