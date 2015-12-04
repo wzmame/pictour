@@ -12,13 +12,19 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.parse.ParseQueryAdapter;
+
 import wzmame.pictour.R;
 import wzmame.pictour.activity.LocationView;
+import wzmame.pictour.activity.NewTour;
+import wzmame.pictour.adapter.TourLocationsAdapter;
 
 /**
  * Created by xmeng on 11/25/15.
  */
 public class TourListViewFragment extends Fragment {
+
+    private ParseQueryAdapter aLocations;
 
     @Nullable
     @Override
@@ -28,11 +34,17 @@ public class TourListViewFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_tour_list_view_fragment, container, false);
         ListView lvLocation = (ListView) v.findViewById(R.id.lvLocations);
-        lvLocation.setAdapter(sampleAdapter);
+
+        String tourId = getActivity().getIntent().getStringExtra("tourId");
+        aLocations = new TourLocationsAdapter(getContext(), tourId);
+        aLocations.setTextKey("name");
+        aLocations.setImageKey("picture");
+
+        lvLocation.setAdapter(aLocations);
         lvLocation.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String locationId = "yqAsJzXHaD"; // TODO: Remove hardcoded value
+                String locationId = aLocations.getItem(position).getObjectId(); // TODO: Remove hardcoded value
 
                 Intent i = new Intent(getContext(), LocationView.class);
                 i.putExtra("locationId", locationId);

@@ -42,6 +42,8 @@ public class Home extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent viewTourIntent = new Intent(Home.this, TourView.class);
+                String tourId = aTours.getItem(position).getObjectId();
+                viewTourIntent.putExtra("tourId", tourId);
                 startActivity(viewTourIntent);
             }
         });
