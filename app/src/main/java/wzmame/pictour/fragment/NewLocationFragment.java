@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +14,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationServices;
 import com.parse.GetDataCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
@@ -97,17 +98,57 @@ public class NewLocationFragment extends Fragment {
         btnDone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                boolean hasRequiredFields = true;
+
                 NewLocation newLocationActivity = (NewLocation) getActivity();
                 Location location = newLocationActivity.getLocation();
+                if (location.getLatitude() == null) {
+                    /*
+                     Up to this point we've been unable to grab gps location so we'll try one last time
+                     before showing a message to the user to turn on the gps.
 
-                location.setName(etName.getText().toString());
-                location.setDescription(etDescription.getText().toString());
+                     If the user is only just now turned the gps on, the startLocationUpdates call
+                     in the NewLocation activity will not have done anything, so we need to call it
+                     again here, just in case.
+                    */
+
+                    GoogleApiClient googleApiClient = newLocationActivity.getGoogleApiClient();
+                    android.location.Location geoLocation = LocationServices.FusedLocationApi.getLastLocation(googleApiClient);
+                    if (geoLocation != null) {
+                        location.setLatitude(geoLocation.getLatitude());
+                        location.setLongitude(geoLocation.getLongitude());
+
+                        newLocationActivity.startLocationUpdates();
+                    } else {
+                        Toast.makeText(getContext(), "Can't get location, please turn on gps", Toast.LENGTH_SHORT).show();
+                        hasRequiredFields = false;
+                    }
+                }
+
+                String name = etName.getText().toString();
+                if (name.isEmpty()) {
+                    Toast.makeText(getContext(), "Please add a name to the location", Toast.LENGTH_SHORT).show();
+                    hasRequiredFields = false;
+                }
+
+                if (location.getPicture() == null) {
+                    Toast.makeText(getContext(), "Take a picture first!", Toast.LENGTH_SHORT).show();
+                    hasRequiredFields = false;
+                }
+
+                if (!hasRequiredFields) {
+                    return;
+                }
+
+                String description = etDescription.getText().toString();
+
+                location.setName(name);
+                location.setDescription(description);
                 location.saveInBackground(new SaveCallback() {
                     @Override
                     public void done(ParseException e) {
                         if (e != null) {
                             Toast.makeText(getActivity(), "Couldn't save image", Toast.LENGTH_LONG).show();
-                            Log.e(TAG, "Couldn't save image: " + e.toString());
                             return;
                         }
 
