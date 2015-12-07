@@ -22,7 +22,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.TestArea" />
-        <activity android:name=".activity.NewLocation" />
+        <activity
+            android:name=".activity.NewLocation"
+            android:windowSoftInputMode="adjustResize" />
         <activity android:name=".activity.NewTour" />
         <activity android:name=".activity.TourView" />
         <activity android:name=".activity.LocationView" />
