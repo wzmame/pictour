@@ -29,4 +29,6 @@ dependencies {
     compile 'com.parse:parseui-widget-android:0.0.1'
     compile 'com.google.android.gms:play-services-location:8.3.0'
     compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
+    compile 'com.google.android.gms:play-services-maps:8.3.0'
+    compile 'com.google.android.gms:play-services-location:8.3.0'
 }

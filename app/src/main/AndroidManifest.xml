@@ -31,6 +31,12 @@
         <activity android:name=".activity.NewTour" />
         <activity android:name=".activity.TourView" />
         <activity android:name=".activity.LocationView" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyCgCPKirhI-cJfcS5IPbq8vT33D6p17Vbg" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>

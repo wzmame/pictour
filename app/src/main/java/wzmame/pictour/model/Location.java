@@ -7,9 +7,6 @@ import com.parse.ParseObject;
 @ParseClassName("Location")
 public class Location extends ParseObject {
 
-    private boolean latitudeSet = false;
-    private boolean longitudeSet = false;
-
     public Location() { }
 
     public String getTourId() {
@@ -55,28 +52,18 @@ public class Location extends ParseObject {
     }
 
     public Double getLatitude() {
-        if (!latitudeSet) {
-            return null;
-        }
-
         return getDouble("latitude");
     }
 
     public void setLatitude(double latitude) {
-        latitudeSet = true;
         put("latitude", latitude);
     }
 
     public Double getLongitude() {
-        if (!longitudeSet) {
-            return null;
-        }
-
         return getDouble("longitude");
     }
 
     public void setLongitude(double longitude) {
-        longitudeSet = true;
         put("longitude", longitude);
     }
 }

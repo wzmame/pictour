@@ -1,9 +1,15 @@
 package wzmame.pictour.fragment;
 
+import android.Manifest;
+import android.annotation.TargetApi;
+import android.content.Context;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.hardware.Camera;
+import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
