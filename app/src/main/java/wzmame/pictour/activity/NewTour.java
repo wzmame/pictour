@@ -46,7 +46,6 @@ public class NewTour extends AppCompatActivity {
 
                 aLocations = new TourLocationsAdapter(NewTour.this, tour.getObjectId());
                 aLocations.setTextKey("name");
-                aLocations.setImageKey("picture");
 
                 lvLocations.setAdapter(aLocations);
 

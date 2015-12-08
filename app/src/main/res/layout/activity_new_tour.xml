@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="wzmame.pictour.activity.NewTour">
+    tools:context="wzmame.pictour.activity.NewTour"
+    android:padding="15dp">
 
     <TextView
         android:layout_width="wrap_content"
@@ -20,7 +21,7 @@
         android:paddingLeft="0dp"
         android:paddingRight="10dp"
         android:paddingEnd="10dp"
-        android:paddingStart="0dp" />
+        />
 
     <EditText
         android:layout_width="wrap_content"
@@ -38,21 +39,23 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/description_label"
-        android:id="@+id/tvDescription"
+        android:id="@+id/tvHomeDescription"
         android:layout_below="@+id/tvName"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/etDescription"
-        android:layout_below="@+id/tvDescription"
+        android:layout_below="@+id/tvHomeDescription"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/etName"
         android:layout_alignEnd="@+id/etName"
-        android:hint="@string/description_hint" />
+        android:hint="@string/description_hint"
+        android:layout_marginTop="5dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -62,7 +65,8 @@
         android:id="@+id/tvLocations"
         android:layout_below="@+id/etDescription"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
 
     <ListView
         android:id="@+id/lvLocations"
@@ -73,7 +77,9 @@
         android:layout_above="@+id/llFooterButtons"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/tvLocations" />
+        android:layout_below="@+id/tvLocations"
+        android:layout_marginTop="5dp"
+        android:divider="@null" />
 
     <LinearLayout
         android:id="@+id/llFooterButtons"
@@ -88,7 +94,8 @@
             android:text="@string/done_button_label"
             android:layout_weight="1"
             android:onClick="onDoneAction"
-            android:contentDescription="@string/done_button_label"/>
+            android:contentDescription="@string/done_button_label"
+            android:layout_marginTop="5dp" />
 
         <Button
             android:id="@+id/btnAddLocation"
@@ -97,7 +104,8 @@
             android:text="@string/add_location_button_label"
             android:layout_weight="1"
             android:onClick="onAddLocationAction"
-            android:contentDescription="@string/add_location_button_label"/>
+            android:contentDescription="@string/add_location_button_label"
+            android:layout_marginTop="5dp" />
 
     </LinearLayout>
 </RelativeLayout>

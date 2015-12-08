@@ -15,6 +15,7 @@ import com.parse.ParseObject;
 import com.parse.ParseQueryAdapter;
 
 import wzmame.pictour.R;
+import wzmame.pictour.adapter.HomeViewAdapter;
 import wzmame.pictour.config.ParseConfig;
 import wzmame.pictour.model.Location;
 import wzmame.pictour.model.Tour;
@@ -32,7 +33,7 @@ public class Home extends AppCompatActivity {
 
         initializeParse();
 
-        aTours = new ParseQueryAdapter<Tour>(this, Tour.class);
+        aTours = new HomeViewAdapter(this);
         aTours.setTextKey("name");
 
         ListView lvTours = (ListView) findViewById(R.id.lvTours);
