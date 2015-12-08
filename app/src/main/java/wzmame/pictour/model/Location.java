@@ -30,6 +30,22 @@ public class Location extends ParseObject {
         put("name", name);
     }
 
+    public Number getLat() {
+        return getNumber("lat");
+    }
+
+    public void setLat(double lat) {
+        put("lat", lat);
+    }
+
+    public Number getLng() {
+        return getNumber("lng");
+    }
+
+    public void setLng(double lng) {
+        put("lng", lng);
+    }
+
     public String getDescription() {
         String description = getString("description");
         if (description == null) {

@@ -1,9 +1,15 @@
 package wzmame.pictour.fragment;
 
+import android.Manifest;
+import android.annotation.TargetApi;
+import android.content.Context;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.hardware.Camera;
+import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -61,6 +67,8 @@ public class CameraFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
+
+
                 if (camera == null) {
                     return;
                 }
@@ -156,7 +164,6 @@ public class CameraFragment extends Fragment {
         NewLocation newLocationActivity = (NewLocation) getActivity();
         Location location = newLocationActivity.getLocation();
         location.setPicture(pictureFile);
-
         FragmentManager fm = getActivity().getSupportFragmentManager();
         fm.popBackStack("NewLocationFragment", FragmentManager.POP_BACK_STACK_INCLUSIVE);
     }
