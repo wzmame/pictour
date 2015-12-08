@@ -29,11 +29,6 @@ public class TourMapViewFragment extends SupportMapFragment {
     private final static int MAP_PADDING = 10;
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    @Override
     public void onResume() {
         super.onResume();
         mMap  = super.getMap();

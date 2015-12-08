@@ -67,8 +67,6 @@ public class CameraFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-
-
                 if (camera == null) {
                     return;
                 }
@@ -164,6 +162,7 @@ public class CameraFragment extends Fragment {
         NewLocation newLocationActivity = (NewLocation) getActivity();
         Location location = newLocationActivity.getLocation();
         location.setPicture(pictureFile);
+
         FragmentManager fm = getActivity().getSupportFragmentManager();
         fm.popBackStack("NewLocationFragment", FragmentManager.POP_BACK_STACK_INCLUSIVE);
     }
