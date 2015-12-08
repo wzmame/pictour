@@ -14,6 +14,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
@@ -34,7 +35,7 @@ public class TourMapViewFragment extends SupportMapFragment {
         mMap  = super.getMap();
         ParseQuery<Location> locationListQuery = ParseQuery.getQuery(Location.class);
         locationListQuery.whereEqualTo("tourId", getActivity().getIntent().getStringExtra("tourId"));
-
+        locationListQuery.addAscendingOrder("createdAt");
         locationListQuery.findInBackground(new FindCallback<Location>() {
 
             @Override
@@ -49,11 +50,15 @@ public class TourMapViewFragment extends SupportMapFragment {
 
     private void addMapMakers(List<Location> locations) {
         LatLngBounds.Builder boundBuilder = new LatLngBounds.Builder();
+        PolylineOptions route = new PolylineOptions();
+
         for (Location l : locations) {
             LatLng geoLocation = new LatLng(l.getLatitude().doubleValue(), l.getLongitude().doubleValue());
             boundBuilder.include(geoLocation);
+            route.add(geoLocation);
             mMap.addMarker(new MarkerOptions().position(geoLocation).title(l.getName()));
         }
+        mMap.addPolyline(route);
         CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(boundBuilder.build(), MAP_PADDING);
         mMap.moveCamera(cu);
 
