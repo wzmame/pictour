@@ -19,15 +19,22 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:divider="@null" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/new_tour_button_text"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="+"
         android:id="@+id/btnNewTour"
+        android:background="@drawable/round_button"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:onClick="onNewTourAction" />
+        android:onClick="onNewTourAction"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="15dp" />
 </RelativeLayout>

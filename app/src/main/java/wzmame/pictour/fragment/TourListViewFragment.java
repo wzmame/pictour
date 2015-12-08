@@ -33,7 +33,6 @@ public class TourListViewFragment extends Fragment {
         String tourId = getActivity().getIntent().getStringExtra("tourId");
         aLocations = new TourLocationsAdapter(getContext(), tourId);
         aLocations.setTextKey("name");
-        aLocations.setImageKey("picture");
 
         lvLocation.setAdapter(aLocations);
         lvLocation.setOnItemClickListener(new AdapterView.OnItemClickListener() {
