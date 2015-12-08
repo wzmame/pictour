@@ -30,22 +30,6 @@ public class Location extends ParseObject {
         put("name", name);
     }
 
-    public Number getLat() {
-        return getNumber("lat");
-    }
-
-    public void setLat(double lat) {
-        put("lat", lat);
-    }
-
-    public Number getLng() {
-        return getNumber("lng");
-    }
-
-    public void setLng(double lng) {
-        put("lng", lng);
-    }
-
     public String getDescription() {
         String description = getString("description");
         if (description == null) {
@@ -65,5 +49,21 @@ public class Location extends ParseObject {
 
     public void setPicture(ParseFile picture) {
         put("picture", picture);
+    }
+
+    public Double getLatitude() {
+        return getDouble("latitude");
+    }
+
+    public void setLatitude(double latitude) {
+        put("latitude", latitude);
+    }
+
+    public Double getLongitude() {
+        return getDouble("longitude");
+    }
+
+    public void setLongitude(double longitude) {
+        put("longitude", longitude);
     }
 }
