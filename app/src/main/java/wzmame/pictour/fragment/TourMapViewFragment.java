@@ -34,7 +34,6 @@ public class TourMapViewFragment extends SupportMapFragment {
         mMap  = super.getMap();
         ParseQuery<Location> locationListQuery = ParseQuery.getQuery(Location.class);
         locationListQuery.whereEqualTo("tourId", getActivity().getIntent().getStringExtra("tourId"));
-        Log.i("Tour Id", getActivity().getIntent().getStringExtra("tourId"));
 
         locationListQuery.findInBackground(new FindCallback<Location>() {
 
@@ -51,7 +50,6 @@ public class TourMapViewFragment extends SupportMapFragment {
     private void addMapMakers(List<Location> locations) {
         LatLngBounds.Builder boundBuilder = new LatLngBounds.Builder();
         for (Location l : locations) {
-            Toast.makeText(getContext(), "lat:" + l.getLatitude(), Toast.LENGTH_LONG).show();
             LatLng geoLocation = new LatLng(l.getLatitude().doubleValue(), l.getLongitude().doubleValue());
             boundBuilder.include(geoLocation);
             mMap.addMarker(new MarkerOptions().position(geoLocation).title(l.getName()));
